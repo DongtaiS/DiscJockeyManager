@@ -14,15 +14,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        //Makes an API request to verify log in information
         binding.buttonLoginSignIn.setOnClickListener {
             val params = JSONObject()
             params.put("email", binding.editTextLoginEmail.text)
             params.put("password", binding.editTextLoginPassword.text)
-            APIRequestHelper.JSONRequest(this@MainActivity, APIRequestHelper.RequestType.LOGIN, params) {
+
+            APIRequestHelper.jsonRequest(this@MainActivity, RequestType.LOGIN, params, {
                 Log.i("REQUEST", it.toString())
                 Toast.makeText(this@MainActivity, "Logged in!", Toast.LENGTH_SHORT).show()
-                //TODO: add sign-in functionality
-            }
+
+                val userData = it.getJSONObject("userData")
+                val ability = userData.getJSONArray("ability").getJSONObject(0)
+                val user = User(userData.getInt("id"),
+                    userData.getString("fullName"), userData.getString("company"), userData.getString("role"),
+                    userData.getString("username"), userData.getString("country"), userData.getString("contact"),
+                    userData.getString("email"), userData.getString("currentPlan"), userData.getString("status"),
+                    userData.getString("avatar"), ability.getString("action"), ability.getString("subject"))
+                LoggedInUser.currentUser = user
+            })
         }
         binding.buttonLoginRegister.setOnClickListener {
             startActivity(Intent(this@MainActivity, RegisterNewUserActivity::class.java))

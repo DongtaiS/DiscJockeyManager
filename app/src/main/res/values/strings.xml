@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DiscJockeyManager</string>
+    <string name="password_requirements">Your password must be at least 8 characters and contain at least:\n1 uppercase character\n1 lowercase character\n1 special character\n1 number</string>
 </resources>

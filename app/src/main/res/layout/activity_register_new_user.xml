@@ -92,6 +92,13 @@
             android:textColorHint="@color/light_gray"
             android:textSize="24sp" />
 
+        <TextView
+            android:id="@+id/textRegisterPasswordReq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password_requirements"
+            android:textColor="@color/light_gray" />
+
         <Button
             android:id="@+id/buttonRegisterTryRegister"
             android:layout_width="match_parent"
