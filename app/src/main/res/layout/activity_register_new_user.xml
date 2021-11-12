@@ -7,36 +7,35 @@
     android:background="@color/background_dark"
     tools:context=".RegisterNewUserActivity">
 
-    <TextView
-        android:id="@+id/textRegisterTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="20dp"
-        android:text="Register a new Disc Jockey Manager account"
-        android:textAlignment="center"
-        android:textColor="@color/light_gray"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/slate_gray"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRegisterTitle"
-        app:layout_constraintVertical_bias="0.17000002">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/textRegisterTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Register a New Account"
+            android:textAlignment="center"
+            android:textColor="@color/light_gray"
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/textRegisterError"
@@ -54,7 +53,7 @@
             android:inputType="textPersonName"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/light_gray"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextRegisterEmail"
@@ -66,7 +65,7 @@
             android:inputType="textEmailAddress"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/light_gray"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextRegisterPassword"
@@ -78,7 +77,7 @@
             android:inputType="textPassword"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/light_gray"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextRegisterConfirmPass"
@@ -90,23 +89,18 @@
             android:inputType="textPassword"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/light_gray"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textRegisterPasswordReq"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/password_requirements"
-            android:textColor="@color/light_gray" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/buttonRegisterTryRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/accent_purple"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="Register"
             android:textColor="@color/light_gray"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

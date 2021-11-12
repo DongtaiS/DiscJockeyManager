@@ -5,25 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_dark"
-    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textLoginTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Disc Jockey Manager"
-        android:textAlignment="center"
-        android:textColor="@color/light_gray"
-        android:textSize="48sp"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/title_background_tint"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/slate_gray"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
@@ -31,20 +34,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLoginTitle"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:id="@+id/imageForgotPassLogo"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/digitera" />
+
+        <TextView
+            android:id="@+id/textLoginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="sans-serif"
+            android:text="Disc Jockey Manager"
+            android:textAlignment="center"
+            android:textColor="@color/light_gray"
+            android:textSize="48sp" />
 
         <EditText
             android:id="@+id/editTextLoginEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_gray"
-            android:ems="10"
+            android:ems="14"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/light_gray"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editTextLoginPassword"
@@ -52,19 +73,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/light_gray"
-            android:ems="10"
+            android:ems="14"
             android:hint="Password"
             android:inputType="textPassword"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/light_gray"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonLoginSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/accent_purple"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_gradient"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="Sign In"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/white"
@@ -93,11 +116,12 @@
             android:id="@+id/buttonLoginRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/slate_gray"
+            android:backgroundTint="@color/background_dark"
             android:text="Register"
             android:textColor="@color/light_gray"
             android:textColorHint="@color/white"
             android:textSize="24sp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
