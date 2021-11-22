@@ -14,6 +14,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //When button is tapped, makes an API call to send an email to reset password
         binding.buttonPassResetReset.setOnClickListener {
             val params = JSONObject()
             params.put("email", binding.editTextPassResetEmail.text)
@@ -21,5 +22,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 Log.i("RESET", it.toString())
             })
         }
+
+        binding.imgBtnPassResetBack.setOnClickListener {
+            finish()
+        }
+
     }
 }

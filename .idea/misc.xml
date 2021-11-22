@@ -3,22 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/drawable/button_gradient.xml" value="0.2703125" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/drawable/rounded_background.xml" value="0.2703125" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/drawable/splash_gradient.xml" value="0.2703125" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/drawable/title_background_tint.xml" value="0.2703125" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/drawable/title_gradient.xml" value="0.2703125" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/font/montserrat_medium.xml" value="0.284375" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_register_new_user.xml" value="0.264" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable-v23/splash_screen.xml" value="0.4036458333333333" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/button_gradient.xml" value="0.22135416666666666" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/rounded_background.xml" value="0.22135416666666666" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/splash_background.xml" value="0.4036458333333333" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/splash_color.xml" value="0.22135416666666666" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/splash_gradient.xml" value="0.3974358974358974" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/splash_screen.xml" value="0.28177083333333336" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/title_background_tint.xml" value="0.22135416666666666" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/title_gradient.xml" value="0.22135416666666666" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
-        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/activity_main.xml" value="0.26766304347826086" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/activity_homepage.xml" value="0.23333333333333334" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/activity_register_new_user.xml" value="0.33" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/activity_splash_screen.xml" value="0.2749094202898551" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/app_bar_main.xml" value="0.2390625" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/content_main.xml" value="0.2390625" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_client.xml" value="0.2390625" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_homepage.xml" value="0.25" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/header_navigation_drawer.xml" value="0.25" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/nav_header_main.xml" value="0.2390625" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/menu/activity_main_drawer.xml" value="0.2390625" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/menu/navigation_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

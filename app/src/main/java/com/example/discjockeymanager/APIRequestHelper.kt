@@ -19,7 +19,7 @@ enum class RequestType {
 //This class is used to make API requests
 class APIRequestHelper {
     companion object {
-        private val baseUrl = "https://api.discjockeymanager.com/api/"
+        private const val baseUrl = "https://api.discjockeymanager.com/api/"
         //Map of RequestTypes to their respective url
         private val requests = mapOf(
             RequestType.LOGIN to "auth/login.php",
@@ -39,6 +39,9 @@ class APIRequestHelper {
                 onError(it)
             })
             queue.add(request)
+        }
+        fun getErrorJSONObject(error: VolleyError) : JSONObject {
+            return JSONObject(String(error.networkResponse.data)).getJSONObject("error")
         }
     }
 }

@@ -15,12 +15,12 @@ import java.util.regex.Pattern
 
 class RegisterNewUserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterNewUserBinding
-    val emailPattern = ""
-    private val passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
-    private val numberPattern = "^(?=.*[0-9])"
-    private val lowerCasePattern = "^(?=.*[a-z])"
-    private val upperCasePattern = "^(?=.*[A-Z])"
-    private val specialCharacterPattern = "^(?=.*[!@#$%&*()])"
+
+    //Regex patterns for password
+    private val numberPattern = "^(?=.*[0-9])" //Contains at least 1 digit
+    private val lowerCasePattern = "^(?=.*[a-z])" //Contains a lowercase letter
+    private val upperCasePattern = "^(?=.*[A-Z])" //Contains an uppercase letter
+    private val specialCharacterPattern = "^(?=.*[!@#$%&*()])" //Contains a special character
 
     private var validUsername = false
     private var validEmail = false
@@ -34,15 +34,19 @@ class RegisterNewUserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
+
+            imgBtnRegisterBack.setOnClickListener {
+                finish()
+            }
+
             val textObserver = object: TextWatcher {
+                //ignore
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    //ignore
                 }
-
+                //ignore
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    //ignore
                 }
-
+                //After text is changed, try to validate input
                 override fun afterTextChanged(p0: Editable?) {
                     validateInput(
                         editTextRegisterUsername.text.toString(),
@@ -50,8 +54,9 @@ class RegisterNewUserActivity : AppCompatActivity() {
                         editTextRegisterPassword.text.toString(),
                         editTextRegisterConfirmPass.text.toString())
                 }
-
             }
+
+            //Add listener to all editText fields
             editTextRegisterPassword.addTextChangedListener(textObserver)
             editTextRegisterConfirmPass.addTextChangedListener(textObserver)
             editTextRegisterEmail.addTextChangedListener(textObserver)
@@ -71,13 +76,15 @@ class RegisterNewUserActivity : AppCompatActivity() {
                         Toast.makeText(this@RegisterNewUserActivity, "Successfully Registered!", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@RegisterNewUserActivity, MainActivity::class.java))
                     }, {
+                        //If there is an error, write it into the textRegisterError field
                         it.printStackTrace()
-                        val errorMessage = JSONObject(String(it.networkResponse.data)).getJSONObject("error")
+                        val errorMessage = APIRequestHelper.getErrorJSONObject(it)
                         val usernameError = errorMessage.getString("username")
                         val emailError = errorMessage.getString("email")
                         binding.textRegisterError.text = usernameError + emailError
                     })
                 } else {
+                    //If input is not valid, make error messages for invalid inputs
                     with(binding) {
                         if (!validUsername) editTextRegisterUsername.error = "Enter a valid username."
                         if (!validEmail) editTextRegisterEmail.error = "Enter a valid email address."
@@ -89,12 +96,14 @@ class RegisterNewUserActivity : AppCompatActivity() {
             }
         }
     }
+
     fun validateInput(username: String, email: String, password: String, confirmPass: String) {
         validUsername = validateUsername(username)
         validEmail = validateEmail(email)
         validPass = validatePassword(password)
         confirmedPass = confirmPassword(password, confirmPass)
     }
+
     private fun validateEmail(email: String): Boolean {
         if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             return true
@@ -103,6 +112,7 @@ class RegisterNewUserActivity : AppCompatActivity() {
         }
         return false
     }
+
     private fun validatePassword(password: String): Boolean {
         //Checks if password contains required characters
         val containsNum = Regex(numberPattern).find(password) != null
@@ -110,11 +120,12 @@ class RegisterNewUserActivity : AppCompatActivity() {
         val containsLowercase = Regex(lowerCasePattern).find(password) != null
         val containsSpecialChar = Regex(specialCharacterPattern).find(password) != null
         val lengthCheck = password.length >= 8
+
         if (containsLowercase && containsNum && containsSpecialChar && containsUppercase && lengthCheck) {
             return true
         } else if (password.isNotBlank()) {
+            //If password is invalid, create error messages
             with (binding) {
-                //Depending on which requirements are missing, changes error message
                 editTextRegisterPassword.error = ""
                 if (!containsNum) editTextRegisterPassword.error = "Missing a number. "
                 if (!containsUppercase) editTextRegisterPassword.error = editTextRegisterPassword.error.toString() + "Missing an uppercase character. "
@@ -125,6 +136,7 @@ class RegisterNewUserActivity : AppCompatActivity() {
         }
         return false
     }
+
     private fun confirmPassword(password: String, confirmPass: String): Boolean {
         if (password == confirmPass) {
             return true
@@ -133,6 +145,7 @@ class RegisterNewUserActivity : AppCompatActivity() {
         }
         return false
     }
+
     private fun validateUsername(username: String) : Boolean {
         return username.isNotBlank()
     }

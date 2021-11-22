@@ -7,6 +7,26 @@
     android:background="@color/background_dark"
     tools:context=".RegisterNewUserActivity">
 
+    <Button
+        android:id="@+id/imgBtnRegisterBack"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/slate_gray"
+        android:foregroundGravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:scaleType="fitCenter"
+        app:icon="?attr/actionModeCloseDrawable"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="40dp"
+        app:iconTint="@color/light_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -30,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/montserrat"
             android:text="Register a New Account"
             android:textAlignment="center"
