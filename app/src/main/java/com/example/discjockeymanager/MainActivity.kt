@@ -15,7 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        Log.i("TESTTOKEN", SharedPreferenceHelper.getUserName(this@MainActivity)!!)
+        val userJsonString = SharedPreferenceHelper.getUserJSON(this@MainActivity)
+        Log.i("TESTTOKEN", userJsonString ?: "fail")
+        if (userJsonString != null) {
+            LoggedInUser.currentUser = LoggedInUser.parseJSON(JSONObject(userJsonString))
+            startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
+        }
 
         //Makes an API request to verify log in information
         binding.buttonLoginSignIn.setOnClickListener {
@@ -29,15 +34,10 @@ class MainActivity : AppCompatActivity() {
 
                 //Gets returned JSONObject of user and creates a new User as the currentUser
                 val userData = it.getJSONObject("userData")
-                val ability = userData.getJSONArray("ability").getJSONObject(0)
-                val user = User(userData.getInt("id"),
-                    userData.getString("fullName"), userData.getString("company"), userData.getString("role"),
-                    userData.getString("username"), userData.getString("country"), userData.getString("contact"),
-                    userData.getString("email"), userData.getString("currentPlan"), userData.getString("status"),
-                    userData.getString("avatar"), ability.getString("action"), ability.getString("subject"))
-                LoggedInUser.currentUser = user
+                LoggedInUser.currentUser = LoggedInUser.parseJSON(userData)
+
                 startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
-                SharedPreferenceHelper.setUserName(this@MainActivity, user.username)
+                SharedPreferenceHelper.setUserJSON(this@MainActivity, userData.toString())
             }) {
                 val error = APIRequestHelper.getErrorJSONObject(it)
                 val errorMessage = error.getString("email")
@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, ForgotPasswordActivity::class.java))
         }
         setContentView(binding.root)
+
     }
 
     override fun onResume() {

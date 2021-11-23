@@ -12,10 +12,18 @@
         <action
             android:id="@+id/action_homepageFragment_to_clientFragment"
             app:destination="@id/clientFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientFragment"
         android:name="com.example.discjockeymanager.ClientFragment"
         android:label="fragment_client"
         tools:layout="@layout/fragment_client" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.discjockeymanager.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" />
 </navigation>

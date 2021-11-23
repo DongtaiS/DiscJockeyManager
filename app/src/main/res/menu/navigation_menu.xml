@@ -3,10 +3,13 @@
 
     <group >
         <item
+            android:id="@+id/homepageFragment"
+            android:title="Home" />
+        <item
             android:id="@+id/clientFragment"
             android:title="Clients" />
         <item
-            android:id="@+id/homepageFragment"
-            android:title="Home" />
+            android:id="@+id/eventsFragment"
+            android:title="Events" />
     </group>
 </menu>

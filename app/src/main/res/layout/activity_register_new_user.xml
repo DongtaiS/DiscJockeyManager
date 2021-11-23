@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_dark"
+    android:background="?attr/colorSecondaryVariant"
     tools:context=".RegisterNewUserActivity">
 
     <Button
@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="50dp"
-        android:backgroundTint="@color/slate_gray"
+        android:backgroundTint="?attr/colorPrimaryVariant"
         android:foregroundGravity="center"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -23,9 +23,9 @@
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:iconSize="40dp"
-        app:iconTint="@color/light_gray"
+        app:iconTint="?attr/colorOnPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -34,7 +34,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/rounded_background"
-        android:backgroundTint="@color/slate_gray"
+        android:backgroundTint="?attr/colorPrimaryVariant"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
@@ -54,7 +54,7 @@
             android:fontFamily="@font/montserrat"
             android:text="Register a New Account"
             android:textAlignment="center"
-            android:textColor="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="36sp" />
 
         <TextView
@@ -67,48 +67,48 @@
             android:id="@+id/editTextRegisterUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/light_gray"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:ems="10"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:textColor="@color/light_gray"
-            android:textColorHint="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/light_gray"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/light_gray"
-            android:textColorHint="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextRegisterPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/light_gray"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@color/light_gray"
-            android:textColorHint="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextRegisterConfirmPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/light_gray"
+            android:backgroundTint="?attr/colorOnPrimary"
             android:ems="10"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textColor="@color/light_gray"
-            android:textColorHint="@color/light_gray"
+            android:textColorHint="?attr/colorOnPrimary"
             android:textSize="20sp" />
 
         <Button
@@ -116,11 +116,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/accent_purple"
+            android:backgroundTint="?attr/colorPrimary"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="Register"
-            android:textColor="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

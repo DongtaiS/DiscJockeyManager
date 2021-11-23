@@ -13,5 +13,4 @@ data class User(val id: Int,
                 val avatar:String,
                 val action: String,
                 val subject: String) {
-
 }
