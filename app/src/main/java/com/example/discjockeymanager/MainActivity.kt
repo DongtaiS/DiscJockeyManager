@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        Log.i("TESTTOKEN", SharedPreferenceHelper.getUserName(this@MainActivity)!!)
+
         //Makes an API request to verify log in information
         binding.buttonLoginSignIn.setOnClickListener {
             val params = JSONObject()
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                     userData.getString("avatar"), ability.getString("action"), ability.getString("subject"))
                 LoggedInUser.currentUser = user
                 startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
+                SharedPreferenceHelper.setUserName(this@MainActivity, user.username)
             }) {
                 val error = APIRequestHelper.getErrorJSONObject(it)
                 val errorMessage = error.getString("email")
