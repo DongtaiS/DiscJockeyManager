@@ -22,19 +22,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
         android:textColor="?attr/colorOnPrimary" />
 
-    <View
-        android:id="@+id/view2"
-        style="@style/TableDivider" />
+    <View style="@style/TableDivider" />
 
     <TextView
         android:id="@+id/textEventsRowClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textEventsRowDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textEventsRowVenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
-        android:text="TextView"
         android:textColor="?attr/colorOnPrimary" />
 
 </TableRow>

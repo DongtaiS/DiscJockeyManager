@@ -1,17 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="?attr/colorOnPrimary"
     tools:context=".EventsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Events"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/tableEventsMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableEventsMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorOnPrimary" />
+        android:layout_marginTop="20dp"
+        android:background="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-</FrameLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="?attr/colorPrimaryVariant">
+
+            <CheckBox
+                android:id="@+id/checkBoxEventsRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="?attr/colorOnPrimary"
+                android:minWidth="0dp"
+                android:minHeight="0dp" />
+
+            <View
+                style="@style/TableDivider"
+                android:layout_marginLeft="0dp" />
+
+            <TextView
+                android:id="@+id/textEventsRowName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Event Name"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View style="@style/TableDivider" />
+
+            <TextView
+                android:id="@+id/textEventsRowClient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Client"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View
+                style="@style/TableDivider"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textEventsRowDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Event Date"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View
+                style="@style/TableDivider"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textEventsRowVenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Venue"
+                android:textColor="?attr/colorOnPrimary" />
+
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

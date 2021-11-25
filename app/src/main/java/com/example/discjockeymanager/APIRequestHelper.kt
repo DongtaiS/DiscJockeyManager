@@ -1,21 +1,18 @@
 package com.example.discjockeymanager
 
 import android.content.Context
-import android.util.Log
-import com.android.volley.NetworkResponse
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.VolleyError
-import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import org.json.JSONArray
 import org.json.JSONObject
 import java.util.*
+import com.android.volley.AuthFailureError
+
 
 //Enum representing the possible API requests
 enum class RequestType {
-    LOGIN, REGISTER, UPDATE_PASS, RESET_PASS_TOKEN, VALIDATE_TOKEN
+    LOGIN, REGISTER, UPDATE_PASS, RESET_PASS_TOKEN, VALIDATE_TOKEN, GET_EVENTS
 }
 
 //This class is used to make API requests
@@ -28,7 +25,8 @@ class APIRequestHelper {
             RequestType.REGISTER to "auth/register.php",
             RequestType.UPDATE_PASS to "auth/update-forgot-password.php",
             RequestType.RESET_PASS_TOKEN to "auth/password-reset-token.php",
-            RequestType.VALIDATE_TOKEN to "auth/validate-token.php"
+            RequestType.VALIDATE_TOKEN to "auth/validate-token.php",
+            RequestType.GET_EVENTS to "user/event/events.php"
         )
 
         //API request that calls the onComplete function with the returned JSONObject as its parameter, or onError if there is an error
@@ -36,12 +34,36 @@ class APIRequestHelper {
                         onError: (VolleyError) -> Unit = { it.printStackTrace() }) {
             val queue = Volley.newRequestQueue(context)
             val request = JsonObjectRequest(Request.Method.POST, "$baseUrl${requests[type]}", params, {
-                onComplete(it, )
+                onComplete(it)
             }, {
                 onError(it)
             })
             queue.add(request)
         }
+
+        fun jsonRequestWithAuth(context: Context, type: RequestType, params: JSONObject, authToken: String, onComplete: (JSONObject) -> Unit,
+                                onError: (VolleyError) -> Unit = { it.printStackTrace() }) {
+            val request = object : JsonObjectRequest(
+                Request.Method.GET, "$baseUrl${requests[type]}", params, {
+                    onComplete(it)
+                },
+                {
+                    onError(it)
+                }) {
+
+                //This is for Headers If You Needed
+                @Throws(AuthFailureError::class)
+                override fun getHeaders(): Map<String, String> {
+                    val headerParams: MutableMap<String, String> = HashMap()
+                    headerParams["Content-Type"] = "application/json; charset=UTF-8"
+                    headerParams["Authorization"] = "Bearer ${SharedPreferenceHelper.getAccessToken(context)}"
+                    return headerParams
+                }
+            }
+            val requestQueue = Volley.newRequestQueue(context)
+            requestQueue.add(request)
+        }
+
         fun getErrorJSONObject(error: VolleyError) : JSONObject {
             return JSONObject(String(error.networkResponse.data)).getJSONObject("error")
         }

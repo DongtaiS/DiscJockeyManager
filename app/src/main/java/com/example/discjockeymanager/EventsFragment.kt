@@ -1,13 +1,24 @@
 package com.example.discjockeymanager
 
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TableRow
+import androidx.annotation.RequiresApi
+import com.android.volley.AuthFailureError
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.discjockeymanager.databinding.FragmentEventsBinding
 import com.example.discjockeymanager.databinding.TablerowEventsBinding
+import org.json.JSONArray
+import org.json.JSONObject
+import java.util.HashMap
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +36,9 @@ class EventsFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var binding: FragmentEventsBinding
+    private val eventList = ArrayList<Event>()
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +46,28 @@ class EventsFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         binding = FragmentEventsBinding.inflate(layoutInflater)
+
+        Log.i("TESTREQUEST", SharedPreferenceHelper.getRefreshToken(requireContext()) ?: "FAIL")
+
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_EVENTS, JSONObject(),
+            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+                Log.i("TESTREQUEST", it.toString())
+                val eventArr = it.getJSONArray("events")
+                for (i in 0 until eventArr.length()) {
+                    eventList.add(Event.parseEvent(eventArr.getJSONObject(i)))
+                }
+                for (e in eventList) {
+                    createTableRow(e)
+                }
+            })
+    }
+
+    private fun createTableRow(e: Event) {
         val rowBinding = TablerowEventsBinding.inflate(layoutInflater, binding.tableEventsMain, true)
-        rowBinding.textEventsRowName.text = "ez clap?"
+        rowBinding.textEventsRowName.text = e.eventName
+        rowBinding.textEventsRowClient.text = e.client
+        rowBinding.textEventsRowDate.text = e.date.toString()
+        rowBinding.textEventsRowVenue.text = e.venue
     }
 
     override fun onCreateView(

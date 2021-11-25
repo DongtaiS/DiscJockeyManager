@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
                 startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
                 SharedPreferenceHelper.setUserJSON(this@MainActivity, userData.toString())
+                SharedPreferenceHelper.setAuthTokens(this@MainActivity, it.getString("accessToken"), it.getString("refreshToken"))
             }) {
                 val error = APIRequestHelper.getErrorJSONObject(it)
                 val errorMessage = error.getString("email")
