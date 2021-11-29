@@ -2,6 +2,7 @@ package com.example.discjockeymanager
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -20,10 +21,10 @@ data class Event(
     val finishTime: LocalDateTime,
     val venue: String,
     val service: String,
-    val staff: String,
     val system: String,
     val songs: String,
-    val user_id: Int
+    val user_id: Int,
+    val staff: JSONArray
 ) {
     companion object {
         @RequiresApi(Build.VERSION_CODES.O)
@@ -40,10 +41,10 @@ data class Event(
                 LocalDateTime.parse(e.getString("event_finish_time"), dateTimeFormat),
                 e.getString("venue"),
                 e.getString("service"),
-                e.getString("staff"),
                 e.getString("system"),
                 e.getString("songs"),
-                e.getInt("user_id")
+                e.getInt("user_id"),
+                e.getJSONArray("staff_list")
             )
         }
     }
