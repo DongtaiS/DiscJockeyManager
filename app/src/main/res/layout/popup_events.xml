@@ -27,6 +27,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout5"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,10 +40,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="TextView" />
+                android:text="Event Name" />
 
             <TextView
-                android:id="@+id/textEventPopupName2"
+                android:id="@+id/textEventPopupName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -55,11 +56,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Event Date" />
 
             <TextView
                 android:id="@+id/textEventPopupDate"
@@ -75,14 +76,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Event Loading Time" />
 
             <TextView
-                android:id="@+id/textEventPopupDate2"
+                android:id="@+id/textEventPopupLoadingTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -95,14 +96,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Event Finish Time" />
 
             <TextView
-                android:id="@+id/textEventPopupDate3"
+                android:id="@+id/textEventPopupFinishTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -115,14 +116,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Service" />
 
             <TextView
-                android:id="@+id/textEventPopupDate4"
+                android:id="@+id/textEventPopupService"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -135,14 +136,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Staff" />
 
             <TextView
-                android:id="@+id/textEventPopupDate5"
+                android:id="@+id/textEventPopupStaff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -153,6 +154,7 @@
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_height="match_parent"
+            android:layout_width="0dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linearLayout5"
@@ -163,10 +165,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="TextView" />
+                android:text="Client" />
 
             <TextView
-                android:id="@+id/textEventPopupName3"
+                android:id="@+id/textEventPopupClient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -179,14 +181,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Event Booked Date" />
 
             <TextView
-                android:id="@+id/textEventPopupDate6"
+                android:id="@+id/textEventPopupBookedDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -199,14 +201,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Event Start Time" />
 
             <TextView
-                android:id="@+id/textEventPopupDate7"
+                android:id="@+id/textEventPopupStartTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -219,14 +221,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Venue" />
 
             <TextView
-                android:id="@+id/textEventPopupDate8"
+                android:id="@+id/textEventPopupVenue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -239,14 +241,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="System" />
 
             <TextView
-                android:id="@+id/textEventPopupDate9"
+                android:id="@+id/textEventPopupSystem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -259,14 +261,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="TextView" />
+                android:text="Songs" />
 
             <TextView
-                android:id="@+id/textEventPopupDate10"
+                android:id="@+id/textEventPopupSongs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"

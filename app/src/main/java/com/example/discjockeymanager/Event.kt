@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.Serializable
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -25,7 +26,7 @@ data class Event(
     val songs: String,
     val user_id: Int,
     val staff: JSONArray
-) {
+) : Serializable {
     companion object {
         @RequiresApi(Build.VERSION_CODES.O)
         fun parseEvent(e: JSONObject): Event {

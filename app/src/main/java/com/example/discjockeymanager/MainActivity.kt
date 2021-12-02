@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val userJsonString = SharedPreferenceHelper.getUserJSON(this@MainActivity)
         Log.i("TESTTOKEN", userJsonString ?: "fail")
-        if (userJsonString != null) {
+        if (!userJsonString.isNullOrBlank()) {
             LoggedInUser.currentUser = LoggedInUser.parseJSON(JSONObject(userJsonString))
             startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
         }

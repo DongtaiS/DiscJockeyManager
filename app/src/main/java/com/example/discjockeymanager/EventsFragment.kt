@@ -8,13 +8,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TableRow
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
+import androidx.core.os.bundleOf
+import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.discjockeymanager.databinding.FragmentEventPopupBinding
 import com.example.discjockeymanager.databinding.FragmentEventsBinding
+import com.example.discjockeymanager.databinding.PopupEventsBinding
 import com.example.discjockeymanager.databinding.TablerowEventsBinding
 import org.json.JSONArray
 import org.json.JSONObject
@@ -68,6 +74,32 @@ class EventsFragment : Fragment() {
         rowBinding.textEventsRowClient.text = e.client
         rowBinding.textEventsRowDate.text = e.date.toString()
         rowBinding.textEventsRowVenue.text = e.venue
+
+        rowBinding.root.setOnClickListener {
+/*            val popupBinding = FragmentEventPopupBinding.inflate(layoutInflater, binding.root, true)
+            popupBinding.textEventPopupName.text = e.eventName
+            popupBinding.textEventPopupBookedDate.text = e.bookedDate.toString()
+            popupBinding.textEventPopupClient.text = e.client
+            popupBinding.textEventPopupDate.text = e.date.toString()
+            popupBinding.textEventPopupFinishTime.text = e.finishTime.toString()
+            popupBinding.textEventPopupLoadingTime.text = e.loadingTime.toString()
+            popupBinding.textEventPopupService.text = e.service
+            popupBinding.textEventPopupSongs.text = e.songs
+            popupBinding.textEventPopupStaff.text = e.staff.toString()
+            popupBinding.textEventPopupStartTime.text = e.startTime.toString()
+            popupBinding.textEventPopupSystem.text = e.system
+            popupBinding.textEventPopupVenue.text = e.venue*/
+/*            object: OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    popupBinding.root.remove
+                }
+
+            }*/
+            findNavController().navigate(
+                R.id.action_eventsFragment_to_eventPopupFragment2,
+                bundleOf("Event" to e)
+            )
+        }
     }
 
     override fun onCreateView(

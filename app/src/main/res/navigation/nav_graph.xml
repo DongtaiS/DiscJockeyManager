@@ -25,5 +25,14 @@
         android:id="@+id/eventsFragment"
         android:name="com.example.discjockeymanager.EventsFragment"
         android:label="fragment_events"
-        tools:layout="@layout/fragment_events" />
+        tools:layout="@layout/fragment_events" >
+        <action
+            android:id="@+id/action_eventsFragment_to_eventPopupFragment2"
+            app:destination="@id/eventPopupFragment2" />
+    </fragment>
+    <dialog
+        android:id="@+id/eventPopupFragment2"
+        android:name="com.example.discjockeymanager.EventPopupFragment"
+        android:label="fragment_event_popup"
+        tools:layout="@layout/fragment_event_popup" />
 </navigation>
