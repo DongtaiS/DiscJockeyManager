@@ -1,5 +1,6 @@
 package com.example.discjockeymanager
 
+import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -30,6 +31,8 @@ class EventPopupFragment : DialogFragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        setStyle(DialogFragment.STYLE_NO_TITLE, 0)
+
         binding = FragmentEventPopupBinding.inflate(layoutInflater)
         val e = arguments?.get("Event") as Event
         Log.i("CREATE", e.toString())
@@ -45,6 +48,7 @@ class EventPopupFragment : DialogFragment() {
         binding.textEventPopupStartTime.text = e.startTime.toString()
         binding.textEventPopupSystem.text = e.system
         binding.textEventPopupVenue.text = e.venue
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }
 
     override fun onCreateView(

@@ -20,6 +20,10 @@
     <style name="SplashTheme" parent="Theme.DiscJockeyManager">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
+    <style name="MenuItem">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">20sp</item>
+    </style>
     <style name="TableDivider">
         <item name="android:layout_width">1dp</item>
         <item name="android:layout_height">match_parent</item>

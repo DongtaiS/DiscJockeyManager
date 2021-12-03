@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/colorSecondaryVariant">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentMainHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,10 +18,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/nav_graph" />
+
+        <Button
+            android:id="@+id/btnMainHomeMenu"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:foregroundGravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:scaleType="fitCenter"
+            android:text=">"
+            app:icon="@android:drawable/ic_media_play"
+            app:iconGravity="textEnd"
+            app:iconPadding="4dp"
+            app:iconSize="0dp"
+            app:iconTint="?attr/colorOnPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -30,5 +53,8 @@
         android:backgroundTint="?attr/colorPrimaryVariant"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/header_navigation_drawer"
-        app:menu="@menu/navigation_menu" />
+        app:itemTextAppearance="@style/MenuItem"
+        app:menu="@menu/navigation_menu">
+
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

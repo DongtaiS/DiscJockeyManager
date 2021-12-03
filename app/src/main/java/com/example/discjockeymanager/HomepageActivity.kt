@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -27,5 +29,17 @@ class HomepageActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.navhostFrag)
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+        binding.btnMainHomeMenu.setOnClickListener {
+            binding.drawerLayout.openDrawer(Gravity.LEFT)
+        }
+        val drawerToggle = object : ActionBarDrawerToggle(this, binding.drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+                super.onDrawerSlide(drawerView, slideOffset)
+                val slideX = drawerView.width * slideOffset
+                binding.contentMainHome.translationX = slideX
+            }
+        }
+        binding.drawerLayout.addDrawerListener(drawerToggle)
     }
 }

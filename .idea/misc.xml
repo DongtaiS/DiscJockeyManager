@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_homepage.xml" value="0.264" />
         <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_main.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/activity_register_new_user.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/fragment_event_popup.xml" value="0.225" />
         <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/fragment_events.xml" value="0.264" />
-        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/popup_events.xml" value="0.1" />
+        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/header_navigation_drawer.xml" value="0.19375" />
+        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/popup_events.xml" value="0.264" />
         <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/layout/tablerow_events.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/dongt/StudioProjects/DiscJockeyManager/app/src/main/res/menu/navigation_menu.xml" value="0.13854166666666667" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable-v23/splash_screen.xml" value="0.4036458333333333" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/drawable/button_gradient.xml" value="0.22135416666666666" />

@@ -76,25 +76,6 @@ class EventsFragment : Fragment() {
         rowBinding.textEventsRowVenue.text = e.venue
 
         rowBinding.root.setOnClickListener {
-/*            val popupBinding = FragmentEventPopupBinding.inflate(layoutInflater, binding.root, true)
-            popupBinding.textEventPopupName.text = e.eventName
-            popupBinding.textEventPopupBookedDate.text = e.bookedDate.toString()
-            popupBinding.textEventPopupClient.text = e.client
-            popupBinding.textEventPopupDate.text = e.date.toString()
-            popupBinding.textEventPopupFinishTime.text = e.finishTime.toString()
-            popupBinding.textEventPopupLoadingTime.text = e.loadingTime.toString()
-            popupBinding.textEventPopupService.text = e.service
-            popupBinding.textEventPopupSongs.text = e.songs
-            popupBinding.textEventPopupStaff.text = e.staff.toString()
-            popupBinding.textEventPopupStartTime.text = e.startTime.toString()
-            popupBinding.textEventPopupSystem.text = e.system
-            popupBinding.textEventPopupVenue.text = e.venue*/
-/*            object: OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    popupBinding.root.remove
-                }
-
-            }*/
             findNavController().navigate(
                 R.id.action_eventsFragment_to_eventPopupFragment2,
                 bundleOf("Event" to e)
