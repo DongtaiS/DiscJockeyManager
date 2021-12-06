@@ -1,6 +1,7 @@
 package com.example.discjockeymanager
 
 import android.content.Context
+import android.util.Log
 import com.android.volley.Request
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
@@ -57,6 +58,28 @@ class APIRequestHelper {
                     val headerParams: MutableMap<String, String> = HashMap()
                     headerParams["Content-Type"] = "application/json; charset=UTF-8"
                     headerParams["Authorization"] = "Bearer ${SharedPreferenceHelper.getAccessToken(context)}"
+                    return headerParams
+                }
+            }
+            val requestQueue = Volley.newRequestQueue(context)
+            requestQueue.add(request)
+        }
+
+        fun refreshAuthToken(context: Context, params: JSONObject, onComplete: (JSONObject) -> Unit,
+                                onError: (VolleyError) -> Unit = { it.printStackTrace(); Log.i("TESTTOKEN", String(it.networkResponse.data)) }) {
+            val request = object : JsonObjectRequest(
+                Request.Method.GET, "$baseUrl${requests[RequestType.VALIDATE_TOKEN]}", params, {
+                    onComplete(it)
+                },
+                {
+                    onError(it)
+                }) {
+
+                @Throws(AuthFailureError::class)
+                override fun getHeaders(): Map<String, String> {
+                    val headerParams: MutableMap<String, String> = HashMap()
+                    headerParams["Content-Type"] = "application/json; charset=UTF-8"
+                    headerParams["RefreshToken"] = "${SharedPreferenceHelper.getRefreshToken(context)}"
                     return headerParams
                 }
             }

@@ -15,8 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        //Refreshes authtoken on startup using cached refresh token
+        Log.i("TESTTOKEN", SharedPreferenceHelper.getRefreshToken(this@MainActivity)!!)
+        val params = JSONObject()
+        params.put("refreshToken", SharedPreferenceHelper.getRefreshToken(this@MainActivity))
+        Log.i("TESTTOKEN", "ASDASD")
+        APIRequestHelper.jsonRequest(this@MainActivity, RequestType.VALIDATE_TOKEN, params, {
+            SharedPreferenceHelper.setAuthTokens(this@MainActivity, it.getString("accessToken"), SharedPreferenceHelper.getRefreshToken(this@MainActivity)!!)
+        }) {
+            Log.i("TESTTOKEN", it.toString())
+            it.printStackTrace()
+        }
+
+        // Retrieve cached user data and assign as current user
         val userJsonString = SharedPreferenceHelper.getUserJSON(this@MainActivity)
-        Log.i("TESTTOKEN", userJsonString ?: "fail")
         if (!userJsonString.isNullOrBlank()) {
             LoggedInUser.currentUser = LoggedInUser.parseJSON(JSONObject(userJsonString))
             startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
