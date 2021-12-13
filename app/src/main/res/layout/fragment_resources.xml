@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ResourcesFragment">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Events"
+        android:text="Resources"
         android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="@+id/tableEventsMain"
+        app:layout_constraintEnd_toEndOf="@+id/tableResourcesMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
-        android:id="@+id/tableEventsMain"
+        android:id="@+id/tableResourcesMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -31,7 +29,7 @@
         android:paddingTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <TableRow
             android:layout_width="match_parent"
@@ -42,7 +40,7 @@
             android:paddingRight="5dp">
 
             <CheckBox
-                android:id="@+id/checkBoxEventsRow"
+                android:id="@+id/checkBoxResourcesRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="?attr/colorOnPrimary"
@@ -54,20 +52,11 @@
                 android:layout_marginLeft="0dp" />
 
             <TextView
-                android:id="@+id/textClientsRowName"
+                android:id="@+id/textResourcesRowDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Event Name"
-                android:textColor="?attr/colorOnPrimary" />
-
-            <View style="@style/TableDivider" />
-
-            <TextView
-                android:id="@+id/textClientsRowLastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Client"
+                android:text="Name"
                 android:textColor="?attr/colorOnPrimary" />
 
             <View
@@ -75,10 +64,10 @@
                 android:layout_height="match_parent" />
 
             <TextView
-                android:id="@+id/textClientsRowCellNumber"
+                android:id="@+id/textResourcesRowClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Event Date"
+                android:text="Cell"
                 android:textColor="?attr/colorOnPrimary" />
 
             <View
@@ -86,13 +75,22 @@
                 android:layout_height="match_parent" />
 
             <TextView
-                android:id="@+id/textClientsRowEmail"
+                android:id="@+id/textResourcesRowBrand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Venue"
+                android:text="Email"
+                android:textColor="?attr/colorOnPrimary" />
+            <View
+                style="@style/TableDivider"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textResourcesRowNewOld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
                 android:textColor="?attr/colorOnPrimary" />
 
         </TableRow>
     </TableLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

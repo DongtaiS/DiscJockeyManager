@@ -1,30 +1,22 @@
 package com.example.discjockeymanager
 
+import android.content.Context
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TableRow
-import androidx.activity.OnBackPressedCallback
+import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
-import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
-import com.android.volley.AuthFailureError
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.example.discjockeymanager.databinding.FragmentEventPopupBinding
 import com.example.discjockeymanager.databinding.FragmentEventsBinding
-import com.example.discjockeymanager.databinding.PopupEventsBinding
 import com.example.discjockeymanager.databinding.TablerowEventsBinding
-import org.json.JSONArray
 import org.json.JSONObject
-import java.util.HashMap
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,14 +54,22 @@ class EventsFragment : Fragment() {
                 for (i in 0 until eventArr.length()) {
                     eventList.add(Event.parseEvent(eventArr.getJSONObject(i)))
                 }
+                var even = true
                 for (e in eventList) {
-                    createTableRow(e)
+                    createTableRow(e, even)
+                    even = !even
                 }
             })
     }
-
-    private fun createTableRow(e: Event) {
+    private fun createTableRow(e: Event, even: Boolean) {
         val rowBinding = TablerowEventsBinding.inflate(layoutInflater, binding.tableEventsMain, true)
+        if (even) {
+            val typedValue = TypedValue()
+            val theme = requireContext().theme
+            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
+            @ColorInt val color = typedValue.data
+            rowBinding.root.background = ColorDrawable(color)
+        }
         rowBinding.textEventsRowName.text = e.eventName
         rowBinding.textEventsRowClient.text = e.client
         rowBinding.textEventsRowDate.text = e.date.toString()
@@ -77,7 +77,7 @@ class EventsFragment : Fragment() {
 
         rowBinding.root.setOnClickListener {
             findNavController().navigate(
-                R.id.action_eventsFragment_to_eventPopupFragment2,
+                R.id.action_eventsFragment_to_eventPopupFragment,
                 bundleOf("Event" to e)
             )
         }
@@ -89,7 +89,6 @@ class EventsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return binding.root
-        //return inflater.inflate(R.layout.fragment_events, container, false)
     }
 
     companion object {

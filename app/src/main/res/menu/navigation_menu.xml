@@ -5,10 +5,19 @@
             android:id="@+id/homepageFragment"
             android:title="Home" />
         <item
+            android:id="@+id/eventsFragment"
+            android:title="Events" />
+        <item
             android:id="@+id/clientFragment"
             android:title="Clients" />
         <item
-            android:id="@+id/eventsFragment"
-            android:title="Events" />
+            android:id="@+id/servicesFragment"
+            android:title="Services" />
+        <item
+            android:id="@+id/resourcesFragment"
+            android:title="Resources" />
+        <item
+            android:id="@+id/systemsFragment"
+            android:title="Systems" />
     </group>
 </menu>

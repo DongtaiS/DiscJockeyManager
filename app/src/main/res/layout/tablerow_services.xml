@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="2dp"
@@ -7,7 +9,7 @@
     android:paddingRight="5dp">
 
     <CheckBox
-        android:id="@+id/checkBoxEventsRow"
+        android:id="@+id/checkBoxServicesRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -20,42 +22,43 @@
         android:layout_marginLeft="0dp" />
 
     <TextView
-        android:id="@+id/textEventsRowName"
+        android:id="@+id/textServicesRowName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
         android:layout_weight="1"
         android:textColor="?attr/colorOnPrimary" />
 
-    <View style="@style/TableDivider" />
+    <View
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/textEventsRowClient"
+        android:id="@+id/textServicesRowDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        android:id="@+id/view"
+        style="@style/TableDivider" />
+
+    <TextView
+        android:id="@+id/textServicesRowPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:textColor="?attr/colorOnPrimary" />
 
     <View
         style="@style/TableDivider"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/textEventsRowDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textColor="?attr/colorOnPrimary" />
-
-    <View
-        style="@style/TableDivider"
-        android:layout_height="match_parent" />
-
-    <TextView
-        android:id="@+id/textEventsRowVenue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textColor="?attr/colorOnPrimary" />
+    <ImageView
+        android:id="@+id/imgServicesRow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_vertical" />
 
 </TableRow>

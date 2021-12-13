@@ -15,24 +15,84 @@
         <action
             android:id="@+id/action_homepageFragment_to_eventsFragment"
             app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_resourcesFragment"
+            app:destination="@id/resourcesFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_systemsFragment"
+            app:destination="@id/systemsFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientFragment"
         android:name="com.example.discjockeymanager.ClientFragment"
         android:label="fragment_client"
-        tools:layout="@layout/fragment_client" />
+        tools:layout="@layout/fragment_clients" >
+        <action
+            android:id="@+id/action_clientFragment_to_clientPopupFragment"
+            app:destination="@id/clientPopupFragment" />
+    </fragment>
     <fragment
         android:id="@+id/eventsFragment"
         android:name="com.example.discjockeymanager.EventsFragment"
         android:label="fragment_events"
         tools:layout="@layout/fragment_events" >
         <action
-            android:id="@+id/action_eventsFragment_to_eventPopupFragment2"
-            app:destination="@id/eventPopupFragment2" />
+            android:id="@+id/action_eventsFragment_to_eventPopupFragment"
+            app:destination="@id/eventPopupFragment" />
     </fragment>
     <dialog
-        android:id="@+id/eventPopupFragment2"
+        android:id="@+id/eventPopupFragment"
         android:name="com.example.discjockeymanager.EventPopupFragment"
         android:label="fragment_event_popup"
-        tools:layout="@layout/fragment_event_popup" />
+        tools:layout="@layout/fragment_events_popup" />
+    <dialog
+        android:id="@+id/clientPopupFragment"
+        android:name="com.example.discjockeymanager.ClientPopupFragment"
+        android:label="fragment_client_popup"
+        tools:layout="@layout/fragment_clients_popup" />
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.example.discjockeymanager.ServicesFragment"
+        android:label="fragment_services"
+        tools:layout="@layout/fragment_services" >
+        <action
+            android:id="@+id/action_servicesFragment_to_servicesPopupFragment"
+            app:destination="@id/servicesPopupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesPopupFragment"
+        android:name="com.example.discjockeymanager.ServicesPopupFragment"
+        android:label="fragment_services_popup"
+        tools:layout="@layout/fragment_services_popup" />
+    <fragment
+        android:id="@+id/resourcesFragment"
+        android:name="com.example.discjockeymanager.ResourcesFragment"
+        android:label="fragment_resources"
+        tools:layout="@layout/fragment_resources" >
+        <action
+            android:id="@+id/action_resourcesFragment_to_resourcesPopupFragment"
+            app:destination="@id/resourcesPopupFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/resourcesPopupFragment"
+        android:name="com.example.discjockeymanager.ResourcesPopupFragment"
+        android:label="fragment_resources_popup"
+        tools:layout="@layout/fragment_resources_popup" />
+    <fragment
+        android:id="@+id/systemsFragment"
+        android:name="com.example.discjockeymanager.SystemsFragment"
+        android:label="fragment_systems"
+        tools:layout="@layout/fragment_systems" >
+        <action
+            android:id="@+id/action_systemsFragment_to_systemsPopupFragment"
+            app:destination="@id/systemsPopupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/systemsPopupFragment"
+        android:name="com.example.discjockeymanager.SystemsPopupFragment"
+        android:label="fragment_systems_popup"
+        tools:layout="@layout/fragment_systems_popup" />
 </navigation>

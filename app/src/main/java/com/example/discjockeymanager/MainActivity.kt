@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
         Log.i("TESTTOKEN", SharedPreferenceHelper.getRefreshToken(this@MainActivity)!!)
         val params = JSONObject()
         params.put("refreshToken", SharedPreferenceHelper.getRefreshToken(this@MainActivity))
-        Log.i("TESTTOKEN", "ASDASD")
         APIRequestHelper.jsonRequest(this@MainActivity, RequestType.VALIDATE_TOKEN, params, {
             SharedPreferenceHelper.setAuthTokens(this@MainActivity, it.getString("accessToken"), SharedPreferenceHelper.getRefreshToken(this@MainActivity)!!)
+            Log.i("TESTTOKEN", it.toString())
         }) {
             Log.i("TESTTOKEN", it.toString())
             it.printStackTrace()

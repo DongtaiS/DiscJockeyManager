@@ -7,7 +7,7 @@
     android:paddingRight="5dp">
 
     <CheckBox
-        android:id="@+id/checkBoxEventsRow"
+        android:id="@+id/checkBoxClientsRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -20,17 +20,19 @@
         android:layout_marginLeft="0dp" />
 
     <TextView
-        android:id="@+id/textEventsRowName"
+        android:id="@+id/textClientsRowName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:textColor="?attr/colorOnPrimary" />
 
-    <View style="@style/TableDivider" />
+    <View
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/textEventsRowClient"
+        android:id="@+id/textClientsRowCellNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -41,18 +43,7 @@
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/textEventsRowDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textColor="?attr/colorOnPrimary" />
-
-    <View
-        style="@style/TableDivider"
-        android:layout_height="match_parent" />
-
-    <TextView
-        android:id="@+id/textEventsRowVenue"
+        android:id="@+id/textClientsRowEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"

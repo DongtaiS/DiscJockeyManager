@@ -24,7 +24,6 @@ class SharedPreferenceHelper {
             return getSharedPreferences(ctx)!!.getString(PREF_USER, "")
         }
         fun setAuthTokens(ctx: Context?, accessToken: String, refreshToken: String) {
-            Log.i("TESTTOKEN", "ASD")
             val editor: SharedPreferences.Editor = getSharedPreferences(ctx)!!.edit()
             editor.putString(PREF_ACCESS_TOKEN, accessToken)
             editor.putString(PREF_REFRESH_TOKEN, refreshToken)
