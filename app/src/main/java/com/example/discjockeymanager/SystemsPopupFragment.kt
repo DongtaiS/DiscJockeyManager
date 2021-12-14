@@ -40,6 +40,8 @@ class SystemsPopupFragment : DialogFragment() {
         binding.textSystemPopupPrice.text = "$${s.price}"
         binding.textSystemPopupSpeakers.text = s.speakers
         binding.textSystemPopupTrussSystem.text = s.trussSystem
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
     }
 
     override fun onCreateView(

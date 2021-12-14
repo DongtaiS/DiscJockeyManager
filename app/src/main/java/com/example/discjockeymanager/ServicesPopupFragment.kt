@@ -1,15 +1,12 @@
 package com.example.discjockeymanager
 
-import android.app.Service
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
-import android.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.discjockeymanager.databinding.FragmentServicesPopupBinding
 
@@ -44,6 +41,7 @@ class ServicesPopupFragment : DialogFragment() {
         val cleanImage: String = s.image.replace("data:image/png;base64,", "").replace("data:image/jpeg;base64,", "")
         val decoded = Base64.decode(cleanImage, Base64.DEFAULT)
         binding.imgServicesPopup.setImageBitmap(BitmapFactory.decodeByteArray(decoded, 0, decoded.size))
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }
 
     override fun onCreateView(

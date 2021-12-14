@@ -31,8 +31,6 @@ class ResourcesPopupFragment : DialogFragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         binding = FragmentResourcesPopupBinding.inflate(layoutInflater)
-
-        setStyle(STYLE_NO_TITLE, 0)
         val r = arguments?.get("Resource") as Resource
         binding.textResourcePopupBrand.text = r.brand
         binding.textResourcePopupClass.text = r.resourceClass
@@ -44,7 +42,6 @@ class ResourcesPopupFragment : DialogFragment() {
             binding.textResourcePopupOriginalPurchaseDate.visibility = View.GONE
         } else {
             binding.textResourcePopupOriginalPurchaseDate.text = r.originalPurchaseDate.toString()
-
         }
         binding.textResourcePopupPurchaseDate.text = r.purchaseDate.toString()
         dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)

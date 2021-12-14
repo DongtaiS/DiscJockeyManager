@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homepageFragment_to_systemsFragment"
             app:destination="@id/systemsFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_venueFragment"
+            app:destination="@id/venuesFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientFragment"
@@ -62,7 +65,7 @@
             android:id="@+id/action_servicesFragment_to_servicesPopupFragment"
             app:destination="@id/servicesPopupFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/servicesPopupFragment"
         android:name="com.example.discjockeymanager.ServicesPopupFragment"
         android:label="fragment_services_popup"
@@ -90,9 +93,23 @@
             android:id="@+id/action_systemsFragment_to_systemsPopupFragment"
             app:destination="@id/systemsPopupFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/systemsPopupFragment"
         android:name="com.example.discjockeymanager.SystemsPopupFragment"
         android:label="fragment_systems_popup"
         tools:layout="@layout/fragment_systems_popup" />
+    <fragment
+        android:id="@+id/venuesFragment"
+        android:name="com.example.discjockeymanager.VenueFragment"
+        android:label="fragment_venues"
+        tools:layout="@layout/fragment_venues" >
+        <action
+            android:id="@+id/action_venueFragment_to_venuesPopupFragment"
+            app:destination="@id/venuesPopupFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/venuesPopupFragment"
+        android:name="com.example.discjockeymanager.VenuesPopupFragment"
+        android:label="fragment_venues_popup"
+        tools:layout="@layout/fragment_venues_popup" />
 </navigation>
