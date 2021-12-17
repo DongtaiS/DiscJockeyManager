@@ -112,4 +112,18 @@
         android:name="com.example.discjockeymanager.VenuesPopupFragment"
         android:label="fragment_venues_popup"
         tools:layout="@layout/fragment_venues_popup" />
+    <fragment
+        android:id="@+id/staffFragment"
+        android:name="com.example.discjockeymanager.StaffFragment"
+        android:label="fragment_staff"
+        tools:layout="@layout/fragment_staff" >
+        <action
+            android:id="@+id/action_staffFragment_to_staffPopupFragment"
+            app:destination="@id/staffPopupFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/staffPopupFragment"
+        android:name="com.example.discjockeymanager.StaffPopupFragment"
+        android:label="fragment_staff_popup"
+        tools:layout="@layout/fragment_staff_popup" />
 </navigation>

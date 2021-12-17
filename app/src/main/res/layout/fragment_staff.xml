@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StaffFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Staff"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/tableStaffMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableStaffMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:background="?attr/colorOnPrimary"
+        android:padding="2dp"
+        android:paddingTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:paddingRight="5dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxClientsRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="?attr/colorOnPrimary"
+                android:minWidth="0dp"
+                android:minHeight="0dp" />
+
+            <View
+                style="@style/TableDivider"
+                android:layout_marginLeft="0dp" />
+
+            <TextView
+                android:id="@+id/textClientsRowName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View
+                style="@style/TableDivider"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textClientsRowCellNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cell"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View
+                style="@style/TableDivider"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textClientsRowEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="?attr/colorOnPrimary" />
+
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

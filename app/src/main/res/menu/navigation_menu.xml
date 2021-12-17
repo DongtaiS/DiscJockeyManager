@@ -22,5 +22,8 @@
         <item
             android:id="@+id/venuesFragment"
             android:title="Venues" />
+        <item
+            android:id="@+id/staffFragment"
+            android:title="Staff" />
     </group>
 </menu>

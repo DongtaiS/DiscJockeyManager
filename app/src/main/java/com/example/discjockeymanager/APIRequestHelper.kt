@@ -15,7 +15,7 @@ import com.android.volley.AuthFailureError
 enum class RequestType {
     LOGIN, REGISTER, UPDATE_PASS, RESET_PASS_TOKEN,
     VALIDATE_TOKEN, GET_EVENTS, GET_CLIENTS, GET_SERVICES,
-    GET_RESOURCES, GET_SYSTEMS, GET_VENUES
+    GET_RESOURCES, GET_SYSTEMS, GET_VENUES, GET_STAFF
 }
 
 //This class is used to make API requests
@@ -34,7 +34,8 @@ class APIRequestHelper {
             RequestType.GET_SERVICES to "user/service/services.php",
             RequestType.GET_RESOURCES to "user/resource/resources.php",
             RequestType.GET_SYSTEMS to "user/system/systems.php",
-            RequestType.GET_VENUES to "user/venue/venues.php"
+            RequestType.GET_VENUES to "user/venue/venues.php",
+            RequestType.GET_STAFF to "user/staff/staff.php"
         )
 
         //API request that calls the onComplete function with the returned JSONObject as its parameter, or onError if there is an error
