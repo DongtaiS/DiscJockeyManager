@@ -52,8 +52,7 @@ class ResourcesFragment : Fragment() {
 
         binding = FragmentResourcesBinding.inflate(layoutInflater)
 
-        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_RESOURCES, JSONObject(),
-            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_RESOURCES, JSONObject(), {
                 Log.i("TESTREQUEST", it.toString())
                 val arr = it.getJSONArray("resources")
                 for (i in 0 until arr.length()) {

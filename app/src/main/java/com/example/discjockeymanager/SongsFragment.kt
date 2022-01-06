@@ -11,24 +11,27 @@ import android.view.ViewGroup
 import androidx.annotation.ColorInt
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.example.discjockeymanager.databinding.FragmentStaffBinding
+import com.example.discjockeymanager.databinding.FragmentSongsBinding
 import com.example.discjockeymanager.databinding.TablerowClientsBinding
+import com.example.discjockeymanager.databinding.TablerowSongsBinding
 import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"/**
+private const val ARG_PARAM2 = "param2"
+
+/**
  * A simple [Fragment] subclass.
- * Use the [StaffFragment.newInstance] factory method to
+ * Use the [SongsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class StaffFragment : Fragment() {
+class SongsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var binding: FragmentStaffBinding
-    private val staffList = ArrayList<Staff>()
+    private lateinit var binding: FragmentSongsBinding
+    private val songList = ArrayList<Song>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,24 +39,24 @@ class StaffFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        binding = FragmentStaffBinding.inflate(layoutInflater)
+        binding = FragmentSongsBinding.inflate(layoutInflater)
 
-        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_STAFF, JSONObject(), {
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_SONGS, JSONObject(), {
                 Log.i("TESTREQUEST", it.toString())
-                val arr = it.getJSONArray("staff")
+                val arr = it.getJSONArray("songs")
                 for (i in 0 until arr.length()) {
-                    staffList.add(Staff.parseStaff(arr.getJSONObject(i)))
+                    songList.add(Song.parseSong(arr.getJSONObject(i)))
                 }
                 var even = true
-                for (s in staffList) {
+                for (s in songList) {
                     createTableRow(s, even)
                     even = !even
                 }
             })
     }
 
-    private fun createTableRow(s: Staff, even: Boolean) {
-        val rowBinding = TablerowClientsBinding.inflate(layoutInflater, binding.tableStaffMain, true)
+    private fun createTableRow(s: Song, even: Boolean) {
+        val rowBinding = TablerowSongsBinding.inflate(layoutInflater, binding.tableSongsMain, true)
         if (even) {
             val typedValue = TypedValue()
             val theme = requireContext().theme
@@ -61,17 +64,20 @@ class StaffFragment : Fragment() {
             @ColorInt val color = typedValue.data
             rowBinding.root.background = ColorDrawable(color)
         }
-        rowBinding.textClientsRowName.text = "${s.firstName} ${s.lastName}"
-        rowBinding.textClientsRowCellNumber.text = s.cellNumber
-        rowBinding.textClientsRowEmail.text = s.email
+        rowBinding.textSongsRowName.text = s.songName
+        rowBinding.textSongsRowArtist.text = s.artist
+        rowBinding.textSongsRowBPM.text = s.bpm
+        rowBinding.textSongsRowMixName.text = s.mixName
+        rowBinding.textSongsRowLabel.text = s.label
 
         rowBinding.root.setOnClickListener {
             findNavController().navigate(
-                R.id.action_staffFragment_to_staffPopupFragment,
-                bundleOf("Staff" to s)
+                R.id.action_clientFragment_to_clientPopupFragment,
+                bundleOf("Song" to s)
             )
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -87,12 +93,12 @@ class StaffFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment StaffFragment.
+         * @return A new instance of fragment SongsFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            StaffFragment().apply {
+            SongsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

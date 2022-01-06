@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:background="?attr/colorPrimaryVariant"
+    android:paddingRight="5dp">
+
+    <CheckBox
+        android:id="@+id/checkBoxClientsRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:buttonTint="?attr/colorOnPrimary"
+        android:minWidth="0dp"
+        android:minHeight="0dp" />
+
+    <View
+        style="@style/TableDivider"
+        android:layout_marginLeft="0dp" />
+
+    <TextView
+        android:id="@+id/textSongsRowName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textSongsRowArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textSongsRowMixName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        android:id="@+id/view7"
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textSongsRowBPM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="?attr/colorOnPrimary" />
+
+    <View
+        android:id="@+id/view8"
+        style="@style/TableDivider"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textSongsRowLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="?attr/colorOnPrimary" />
+
+</TableRow>

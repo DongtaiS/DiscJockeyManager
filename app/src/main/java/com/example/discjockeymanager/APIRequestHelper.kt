@@ -15,7 +15,8 @@ import com.android.volley.AuthFailureError
 enum class RequestType {
     LOGIN, REGISTER, UPDATE_PASS, RESET_PASS_TOKEN,
     VALIDATE_TOKEN, GET_EVENTS, GET_CLIENTS, GET_SERVICES,
-    GET_RESOURCES, GET_SYSTEMS, GET_VENUES, GET_STAFF
+    GET_RESOURCES, GET_SYSTEMS, GET_VENUES, GET_STAFF, GET_SONGS,
+    GET_ANALYTICS
 }
 
 //This class is used to make API requests
@@ -28,14 +29,16 @@ class APIRequestHelper {
             RequestType.REGISTER to "auth/register.php",
             RequestType.UPDATE_PASS to "auth/update-forgot-password.php",
             RequestType.RESET_PASS_TOKEN to "auth/password-reset-token.php",
-            RequestType.VALIDATE_TOKEN to "auth/validate-token.php",
+            RequestType.VALIDATE_TOKEN to "validate-token.php",
             RequestType.GET_EVENTS to "user/event/events.php",
             RequestType.GET_CLIENTS to "user/client/clients.php",
             RequestType.GET_SERVICES to "user/service/services.php",
             RequestType.GET_RESOURCES to "user/resource/resources.php",
             RequestType.GET_SYSTEMS to "user/system/systems.php",
             RequestType.GET_VENUES to "user/venue/venues.php",
-            RequestType.GET_STAFF to "user/staff/staff.php"
+            RequestType.GET_STAFF to "user/staff/staff.php",
+            RequestType.GET_SONGS to "user/song/songs.php",
+            RequestType.GET_ANALYTICS to "dashboard/analytics/analytics.php"
         )
 
         //API request that calls the onComplete function with the returned JSONObject as its parameter, or onError if there is an error
@@ -50,7 +53,7 @@ class APIRequestHelper {
             queue.add(request)
         }
 
-        fun jsonRequestWithAuth(context: Context, type: RequestType, params: JSONObject, authToken: String, onComplete: (JSONObject) -> Unit,
+        fun jsonRequestWithAuth(context: Context, type: RequestType, params: JSONObject, onComplete: (JSONObject) -> Unit,
                                 onError: (VolleyError) -> Unit = { it.printStackTrace() }) {
             val request = object : JsonObjectRequest(
                 Request.Method.GET, "$baseUrl${requests[type]}", params, {
@@ -87,7 +90,7 @@ class APIRequestHelper {
                 override fun getHeaders(): Map<String, String> {
                     val headerParams: MutableMap<String, String> = HashMap()
                     headerParams["Content-Type"] = "application/json; charset=UTF-8"
-                    headerParams["RefreshToken"] = "${SharedPreferenceHelper.getRefreshToken(context)}"
+                    headerParams["refreshToken"] = "${SharedPreferenceHelper.getRefreshToken(context)}"
                     return headerParams
                 }
             }

@@ -25,5 +25,8 @@
         <item
             android:id="@+id/staffFragment"
             android:title="Staff" />
+        <item
+            android:id="@+id/songsFragment"
+            android:title="Songs" />
     </group>
 </menu>

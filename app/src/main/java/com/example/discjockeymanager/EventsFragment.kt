@@ -47,8 +47,7 @@ class EventsFragment : Fragment() {
 
         Log.i("TESTREQUEST", SharedPreferenceHelper.getRefreshToken(requireContext()) ?: "FAIL")
 
-        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_EVENTS, JSONObject(),
-            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_EVENTS, JSONObject(), {
                 Log.i("TESTREQUEST", it.toString())
                 val eventArr = it.getJSONArray("events")
                 for (i in 0 until eventArr.length()) {

@@ -23,7 +23,7 @@
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/app_bar_main.xml" value="0.2390625" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/content_main.xml" value="0.2390625" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_client.xml" value="0.2390625" />
-        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_clients.xml" value="0.32518115942028986" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_clients.xml" value="0.25" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_clients_popup.xml" value="0.29635416666666664" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_events.xml" value="0.3319746376811594" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_events_popup.xml" value="0.3319746376811594" />
@@ -32,6 +32,8 @@
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_resources_popup.xml" value="0.3319746376811594" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_services.xml" value="0.32518115942028986" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_services_popup.xml" value="0.22291666666666668" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_songs.xml" value="0.29010416666666666" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_songs_popup.xml" value="0.2520833333333333" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_staff.xml" value="0.32518115942028986" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_systems.xml" value="0.32518115942028986" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/fragment_venu.xml" value="0.25364583333333335" />
@@ -43,6 +45,7 @@
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/tablerow_clients.xml" value="0.32518115942028986" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/tablerow_events.xml" value="0.33" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/tablerow_resources.xml" value="0.3319746376811594" />
+        <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/tablerow_songs.xml" value="0.29010416666666666" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/layout/tablerow_venues.xml" value="0.25364583333333335" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/menu/activity_main_drawer.xml" value="0.2390625" />
         <entry key="..\:/mansc/Documents/Android/Projects/DiscJockeyManager/app/src/main/res/menu/navigation_menu.xml" value="0.25" />

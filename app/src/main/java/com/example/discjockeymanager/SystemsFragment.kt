@@ -40,8 +40,7 @@ class SystemsFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         binding = FragmentSystemsBinding.inflate(layoutInflater)
-        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_SYSTEMS, JSONObject(),
-            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_SYSTEMS, JSONObject(), {
                 Log.i("TESTREQUEST", it.toString())
                 val arr = it.getJSONArray("systems")
                 for (i in 0 until arr.length()) {

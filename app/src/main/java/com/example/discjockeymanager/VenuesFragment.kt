@@ -41,8 +41,7 @@ class VenueFragment : Fragment() {
         }
         binding = FragmentVenuesBinding.inflate(layoutInflater)
 
-        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_VENUES, JSONObject(),
-            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_VENUES, JSONObject(), {
                 Log.i("TESTREQUEST", it.toString())
                 val eventArr = it.getJSONArray("venues")
                 for (i in 0 until eventArr.length()) {

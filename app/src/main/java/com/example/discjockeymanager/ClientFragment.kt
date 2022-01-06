@@ -41,7 +41,7 @@ class ClientFragment : Fragment() {
         binding = FragmentClientsBinding.inflate(layoutInflater)
 
         APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_CLIENTS, JSONObject(),
-            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+            {
                 Log.i("TESTREQUEST", it.toString())
                 val arr = it.getJSONArray("clients")
                 for (i in 0 until arr.length()) {

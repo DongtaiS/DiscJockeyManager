@@ -47,8 +47,7 @@ class ServicesFragment : Fragment() {
         }
         binding = FragmentServicesBinding.inflate(layoutInflater)
 
-        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_SERVICES, JSONObject(),
-            SharedPreferenceHelper.getAccessToken(requireContext())!!, {
+        APIRequestHelper.jsonRequestWithAuth(requireContext(), RequestType.GET_SERVICES, JSONObject(), {
                 Log.i("TESTREQUEST", it.toString())
                 val arr = it.getJSONArray("services")
                 for (i in 0 until arr.length()) {
