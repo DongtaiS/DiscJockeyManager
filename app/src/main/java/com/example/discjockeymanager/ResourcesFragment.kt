@@ -14,15 +14,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.discjockeymanager.databinding.FragmentResourcesBinding
 import com.example.discjockeymanager.databinding.TablerowResourcesBinding
 import org.json.JSONObject
-import androidx.annotation.ColorInt
-import android.content.res.Resources.Theme
 
-import android.util.TypedValue
-
-
-
-
-
+import com.example.discjockeymanager.Objects.Resource
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -68,11 +61,7 @@ class ResourcesFragment : Fragment() {
     private fun createTableRow(r: Resource, even: Boolean) {
         val rowBinding = TablerowResourcesBinding.inflate(layoutInflater, binding.tableResourcesMain, true)
         if (even) {
-            val typedValue = TypedValue()
-            val theme = requireContext().theme
-            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
-            @ColorInt val color = typedValue.data
-            rowBinding.root.background = ColorDrawable(color)
+            rowBinding.root.background = ColorDrawable(Colors.getThemeColor(requireContext(), R.attr.darkBackground))
         }
         rowBinding.textResourcesRowDesc.text = r.desc
         rowBinding.textResourcesRowClass.text = r.resourceClass

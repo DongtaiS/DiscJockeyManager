@@ -1,11 +1,10 @@
-package com.example.discjockeymanager
+package com.example.discjockeymanager.Objects
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import org.json.JSONObject
 import java.io.Serializable
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 data class Resource(
     val brand: String,

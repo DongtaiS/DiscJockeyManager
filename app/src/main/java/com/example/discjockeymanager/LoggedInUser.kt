@@ -1,5 +1,6 @@
 package com.example.discjockeymanager
 
+import com.example.discjockeymanager.Objects.User
 import org.json.JSONObject
 
 class LoggedInUser {

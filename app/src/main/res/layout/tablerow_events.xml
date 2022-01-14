@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="2dp"
-    android:background="?attr/colorPrimaryVariant"
+    android:background="?attr/secondaryBackground"
     android:paddingRight="5dp">
 
     <CheckBox
@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:buttonTint="?attr/colorOnPrimary"
+        android:buttonTint="?attr/mainText"
         android:minWidth="0dp"
         android:minHeight="0dp" />
 
@@ -21,20 +21,21 @@
 
     <TextView
         android:id="@+id/textEventsRowName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:textColor="?attr/colorOnPrimary" />
+        android:textColor="?attr/mainText" />
 
     <View style="@style/TableDivider" />
 
     <TextView
         android:id="@+id/textEventsRowClient"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:textColor="?attr/colorOnPrimary" />
+        android:layout_weight="1"
+        android:textColor="?attr/mainText" />
 
     <View
         style="@style/TableDivider"
@@ -42,10 +43,11 @@
 
     <TextView
         android:id="@+id/textEventsRowDate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:textColor="?attr/colorOnPrimary" />
+        android:layout_weight="1"
+        android:textColor="?attr/mainText" />
 
     <View
         style="@style/TableDivider"
@@ -53,9 +55,10 @@
 
     <TextView
         android:id="@+id/textEventsRowVenue"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:textColor="?attr/colorOnPrimary" />
+        android:layout_weight="1"
+        android:textColor="?attr/mainText" />
 
 </TableRow>

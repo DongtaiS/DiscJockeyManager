@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSecondaryVariant">
+    android:background="?attr/darkBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentMainHome"
@@ -30,17 +30,16 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:backgroundTint="?attr/secondaryBackground"
             android:foregroundGravity="center"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:scaleType="fitCenter"
-            android:text=">"
-            app:icon="@android:drawable/ic_media_play"
+            app:icon="@drawable/ic_menu"
             app:iconGravity="textEnd"
             app:iconPadding="4dp"
-            app:iconSize="0dp"
-            app:iconTint="?attr/colorOnPrimary"
+            app:iconSize="40dp"
+            app:iconTint="?attr/mainText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -50,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:backgroundTint="?attr/colorPrimaryVariant"
+        android:backgroundTint="?attr/secondaryBackground"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/header_navigation_drawer"
         app:itemTextAppearance="@style/MenuItem"

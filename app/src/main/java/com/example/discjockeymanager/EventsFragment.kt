@@ -1,19 +1,17 @@
 package com.example.discjockeymanager
 
-import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.discjockeymanager.Objects.Event
 import com.example.discjockeymanager.databinding.FragmentEventsBinding
 import com.example.discjockeymanager.databinding.TablerowEventsBinding
 import org.json.JSONObject
@@ -63,11 +61,7 @@ class EventsFragment : Fragment() {
     private fun createTableRow(e: Event, even: Boolean) {
         val rowBinding = TablerowEventsBinding.inflate(layoutInflater, binding.tableEventsMain, true)
         if (even) {
-            val typedValue = TypedValue()
-            val theme = requireContext().theme
-            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
-            @ColorInt val color = typedValue.data
-            rowBinding.root.background = ColorDrawable(color)
+            rowBinding.root.background = ColorDrawable(Colors.getThemeColor(requireContext(), R.attr.darkBackground))
         }
         rowBinding.textEventsRowName.text = e.eventName
         rowBinding.textEventsRowClient.text = e.client

@@ -24,7 +24,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="4dp"
-        android:background="?attr/colorOnSecondary"
+        android:background="?attr/alternateBackground"
         android:padding="2dp"
         android:paddingTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,14 +36,15 @@
             android:layout_height="match_parent"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="?attr/colorPrimaryVariant"
+            android:background="?attr/secondaryBackground"
+            android:gravity="fill_vertical"
             android:paddingRight="5dp">
 
             <CheckBox
                 android:id="@+id/checkBoxVenuesRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="?attr/colorOnPrimary"
+                android:buttonTint="?attr/mainText"
                 android:minWidth="0dp"
                 android:minHeight="0dp" />
 
@@ -56,8 +57,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
                 android:text="Name"
-                android:textColor="?attr/colorOnPrimary" />
+                android:textColor="?attr/mainText" />
 
             <View style="@style/TableDivider" />
 
@@ -65,8 +68,10 @@
                 android:id="@+id/textVenuesRowAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
                 android:text="Address"
-                android:textColor="?attr/colorOnPrimary" />
+                android:textColor="?attr/mainText" />
 
             <View
                 style="@style/TableDivider"
@@ -76,8 +81,10 @@
                 android:id="@+id/textVenuesRowCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
                 android:text="City"
-                android:textColor="?attr/colorOnPrimary" />
+                android:textColor="?attr/mainText" />
 
             <View
                 style="@style/TableDivider"
@@ -87,8 +94,10 @@
                 android:id="@+id/textVenuesRowStateProvince"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
                 android:text="State/Province"
-                android:textColor="?attr/colorOnPrimary" />
+                android:textColor="?attr/mainText" />
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

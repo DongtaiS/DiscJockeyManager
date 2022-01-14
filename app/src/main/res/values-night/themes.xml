@@ -1,18 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.DiscJockeyManager" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/accent_purple</item>
-        <item name="colorPrimaryVariant">@color/slate_gray</item>
-        <item name="colorOnPrimary">@color/light_gray</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/accent_orange</item>
-        <item name="colorSecondaryVariant">@color/background_dark</item>
-        <item name="colorOnSecondary">@color/light_gray</item>
+        <item name="mainColor">@color/accent_purple</item>
+        <item name="secondaryBackground">@color/slate_gray</item>
+        <item name="mainText">@color/light_gray</item>
+        <item name="secondaryColor">@color/accent_orange</item>
+        <item name="darkBackground">@color/background_dark</item>
+        <item name="alternateBackground">@color/dark_gray</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/secondaryBackground</item>
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/montserrat</item>
         <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textColor">?attr/mainText</item>
     </style>
 </resources>

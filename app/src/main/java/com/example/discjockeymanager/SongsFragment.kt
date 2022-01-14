@@ -3,16 +3,12 @@ package com.example.discjockeymanager
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.ColorInt
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
+import com.example.discjockeymanager.Objects.Song
 import com.example.discjockeymanager.databinding.FragmentSongsBinding
-import com.example.discjockeymanager.databinding.TablerowClientsBinding
 import com.example.discjockeymanager.databinding.TablerowSongsBinding
 import org.json.JSONObject
 
@@ -58,24 +54,13 @@ class SongsFragment : Fragment() {
     private fun createTableRow(s: Song, even: Boolean) {
         val rowBinding = TablerowSongsBinding.inflate(layoutInflater, binding.tableSongsMain, true)
         if (even) {
-            val typedValue = TypedValue()
-            val theme = requireContext().theme
-            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
-            @ColorInt val color = typedValue.data
-            rowBinding.root.background = ColorDrawable(color)
+            rowBinding.root.background = ColorDrawable(Colors.getThemeColor(requireContext(), R.attr.darkBackground))
         }
         rowBinding.textSongsRowName.text = s.songName
         rowBinding.textSongsRowArtist.text = s.artist
         rowBinding.textSongsRowBPM.text = s.bpm
         rowBinding.textSongsRowMixName.text = s.mixName
         rowBinding.textSongsRowLabel.text = s.label
-
-        rowBinding.root.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_clientFragment_to_clientPopupFragment,
-                bundleOf("Song" to s)
-            )
-        }
     }
 
     override fun onCreateView(

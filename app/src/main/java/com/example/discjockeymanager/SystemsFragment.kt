@@ -3,16 +3,14 @@ package com.example.discjockeymanager
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.ColorInt
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.discjockeymanager.Objects.DJSystem
 import com.example.discjockeymanager.databinding.FragmentSystemsBinding
-import com.example.discjockeymanager.databinding.TablerowResourcesBinding
 import com.example.discjockeymanager.databinding.TablerowSystemsBinding
 import org.json.JSONObject
 
@@ -56,11 +54,7 @@ class SystemsFragment : Fragment() {
     private fun createTableRow(s: DJSystem, even: Boolean) {
         val rowBinding = TablerowSystemsBinding.inflate(layoutInflater, binding.tableResourcesMain, true)
         if (even) {
-            val typedValue = TypedValue()
-            val theme = requireContext().theme
-            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
-            @ColorInt val color = typedValue.data
-            rowBinding.root.background = ColorDrawable(color)
+            rowBinding.root.background = ColorDrawable(Colors.getThemeColor(requireContext(), R.attr.darkBackground))
         }
         rowBinding.textSystemsRowName.text = s.systemName
         rowBinding.textSystemsRowPrice.text = "$${s.price}"

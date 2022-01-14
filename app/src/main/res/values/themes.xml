@@ -2,20 +2,18 @@
     <!-- Base application theme. -->
     <style name="Theme.DiscJockeyManager" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/accent_purple</item>
-        <item name="colorPrimaryVariant">@color/slate_gray</item>
-        <item name="colorOnPrimary">@color/light_gray</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/accent_orange</item>
-        <item name="colorSecondaryVariant">@color/background_dark</item>
-        <item name="colorOnSecondary">@color/dark_gray</item>
+        <item name="mainColor">@color/accent_purple</item>
+        <item name="secondaryBackground">@color/white</item>
+        <item name="mainText">@color/dim_gray</item>
+        <item name="secondaryColor">@color/accent_orange</item>
+        <item name="darkBackground">@color/white_smoke</item>
+        <item name="alternateBackground">@color/lavender</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/secondaryBackground</item>
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/montserrat</item>
         <item name="fontFamily">@font/montserrat</item>
-
-        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textColor">?attr/mainText</item>
     </style>
     <style name="SplashTheme" parent="Theme.DiscJockeyManager">
         <item name="android:windowBackground">@drawable/splash_screen</item>
@@ -29,7 +27,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_marginLeft">5dp</item>
         <item name="android:layout_marginRight">5dp</item>
-        <item name="android:background">?attr/colorOnSecondary</item>
+        <item name="android:background">?attr/alternateBackground</item>
     </style>
     <style name="Theme.DiscJockeyManager.NoActionBar">
         <item name="windowActionBar">false</item>

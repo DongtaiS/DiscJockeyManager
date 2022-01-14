@@ -1,4 +1,4 @@
-package com.example.discjockeymanager
+package com.example.discjockeymanager.Objects
 
 import org.json.JSONObject
 import java.io.Serializable

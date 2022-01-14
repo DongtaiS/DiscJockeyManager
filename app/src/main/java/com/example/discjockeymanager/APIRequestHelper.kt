@@ -16,7 +16,7 @@ enum class RequestType {
     LOGIN, REGISTER, UPDATE_PASS, RESET_PASS_TOKEN,
     VALIDATE_TOKEN, GET_EVENTS, GET_CLIENTS, GET_SERVICES,
     GET_RESOURCES, GET_SYSTEMS, GET_VENUES, GET_STAFF, GET_SONGS,
-    GET_ANALYTICS
+    GET_ANALYTICS, GET_USER_INFO
 }
 
 //This class is used to make API requests
@@ -38,7 +38,8 @@ class APIRequestHelper {
             RequestType.GET_VENUES to "user/venue/venues.php",
             RequestType.GET_STAFF to "user/staff/staff.php",
             RequestType.GET_SONGS to "user/song/songs.php",
-            RequestType.GET_ANALYTICS to "dashboard/analytics/analytics.php"
+            RequestType.GET_ANALYTICS to "dashboard/analytics/analytics.php",
+            RequestType.GET_USER_INFO to "user/user/users.php"
         )
 
         //API request that calls the onComplete function with the returned JSONObject as its parameter, or onError if there is an error
@@ -76,7 +77,7 @@ class APIRequestHelper {
             requestQueue.add(request)
         }
 
-        fun refreshAuthToken(context: Context, params: JSONObject, onComplete: (JSONObject) -> Unit,
+/*        fun refreshAuthToken(context: Context, params: JSONObject, onComplete: (JSONObject) -> Unit,
                                 onError: (VolleyError) -> Unit = { it.printStackTrace(); Log.i("TESTTOKEN", String(it.networkResponse.data)) }) {
             val request = object : JsonObjectRequest(
                 Request.Method.GET, "$baseUrl${requests[RequestType.VALIDATE_TOKEN]}", params, {
@@ -89,14 +90,14 @@ class APIRequestHelper {
                 @Throws(AuthFailureError::class)
                 override fun getHeaders(): Map<String, String> {
                     val headerParams: MutableMap<String, String> = HashMap()
-                    headerParams["Content-Type"] = "application/json; charset=UTF-8"
-                    headerParams["refreshToken"] = "${SharedPreferenceHelper.getRefreshToken(context)}"
+                    headerParams["Content-Type"] = "application/x-www-form-urlencoded; charset=UTF-8"
+                    headerParams["RefreshToken"] = "${SharedPreferenceHelper.getRefreshToken(context)}"
                     return headerParams
                 }
             }
             val requestQueue = Volley.newRequestQueue(context)
             requestQueue.add(request)
-        }
+        }*/
 
         fun getErrorJSONObject(error: VolleyError) : JSONObject {
             return JSONObject(String(error.networkResponse.data)).getJSONObject("error")

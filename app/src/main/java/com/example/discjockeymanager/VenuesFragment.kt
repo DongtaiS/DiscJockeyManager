@@ -3,16 +3,14 @@ package com.example.discjockeymanager
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.ColorInt
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.discjockeymanager.Objects.Venue
 import com.example.discjockeymanager.databinding.FragmentVenuesBinding
-import com.example.discjockeymanager.databinding.TablerowEventsBinding
 import com.example.discjockeymanager.databinding.TablerowVenuesBinding
 import org.json.JSONObject
 
@@ -58,11 +56,7 @@ class VenueFragment : Fragment() {
     private fun createTableRow(v: Venue, even: Boolean) {
         val rowBinding = TablerowVenuesBinding.inflate(layoutInflater, binding.tableVenuesMain, true)
         if (even) {
-            val typedValue = TypedValue()
-            val theme = requireContext().theme
-            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
-            @ColorInt val color = typedValue.data
-            rowBinding.root.background = ColorDrawable(color)
+            rowBinding.root.background = ColorDrawable(Colors.getThemeColor(requireContext(), R.attr.darkBackground))
         }
         rowBinding.textVenuesRowNameRowName.text = v.name
         rowBinding.textVenuesRowAddress.text = v.address

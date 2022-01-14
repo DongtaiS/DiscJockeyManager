@@ -3,14 +3,13 @@ package com.example.discjockeymanager
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.ColorInt
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.discjockeymanager.Objects.Client
 import com.example.discjockeymanager.databinding.FragmentClientsBinding
 import com.example.discjockeymanager.databinding.TablerowClientsBinding
 import org.json.JSONObject
@@ -66,11 +65,7 @@ class ClientFragment : Fragment() {
     private fun createTableRow(c: Client, even: Boolean) {
         val rowBinding = TablerowClientsBinding.inflate(layoutInflater, binding.tableClientsMain, true)
         if (even) {
-            val typedValue = TypedValue()
-            val theme = requireContext().theme
-            theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true)
-            @ColorInt val color = typedValue.data
-            rowBinding.root.background = ColorDrawable(color)
+            rowBinding.root.background = ColorDrawable(Colors.getThemeColor(requireContext(), R.attr.darkBackground))
         }
         rowBinding.textClientsRowName.text = "${c.firstName} ${c.lastName}"
         rowBinding.textClientsRowCellNumber.text = c.cellNumber

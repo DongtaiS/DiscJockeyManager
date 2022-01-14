@@ -15,21 +15,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        APIRequestHelper.refreshAuthToken(this@MainActivity, JSONObject(),{
-            Log.i("TESTTOKEN", "SUCCESS")
-        }) {
-            Log.i("TESTTOKEN", "FAILL")
-        }
+
         //Refreshes authtoken on startup using cached refresh token
         val token = SharedPreferenceHelper.getRefreshToken(this@MainActivity)
         Log.i("TESTTOKEN", SharedPreferenceHelper.getRefreshToken(this@MainActivity) ?: "FAIL")
         if (!SharedPreferenceHelper.getRefreshToken(this@MainActivity).isNullOrBlank()) {
             val params = JSONObject()
             params.put("refreshToken", token)
+            params.put("token", SharedPreferenceHelper.getAccessToken(this@MainActivity))
             APIRequestHelper.jsonRequest(this@MainActivity, RequestType.VALIDATE_TOKEN, params, {
                 SharedPreferenceHelper.setAuthTokens(this@MainActivity, it.getString("accessToken"), SharedPreferenceHelper.getRefreshToken(this@MainActivity)!!)
                 Log.i("TESTTOKEN", it.toString())
-
+                Log.i("TESTTOKEN", "SUCESS")
                 // Retrieve cached user data and assign as current user
                 val userJsonString = SharedPreferenceHelper.getUserJSON(this@MainActivity)
                 Log.i("INFO", userJsonString ?: "fail")
@@ -37,12 +34,12 @@ class MainActivity : AppCompatActivity() {
                     LoggedInUser.currentUser = LoggedInUser.parseJSON(JSONObject(userJsonString))
                     startActivity(Intent(this@MainActivity, HomepageActivity::class.java))
                 }
-
             }) {
                 Log.i("TESTTOKEN", it.toString())
                 it.printStackTrace()
             }
         }
+
 
         //Makes an API request to verify log in information
         binding.buttonLoginSignIn.setOnClickListener {

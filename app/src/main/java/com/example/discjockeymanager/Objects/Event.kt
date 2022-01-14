@@ -1,4 +1,4 @@
-package com.example.discjockeymanager
+package com.example.discjockeymanager.Objects
 
 import android.os.Build
 import androidx.annotation.RequiresApi

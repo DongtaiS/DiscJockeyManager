@@ -4,8 +4,19 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_dark">#161d31</color>
     <color name="slate_gray">#283046</color>
-    <color name="accent_purple">#615ac6</color>
+    <color name="accent_purple">#7367ef</color>
     <color name="light_gray">#ced3dc</color>
-    <color name="accent_orange">#f0623b</color>
-    <color name="dark_gray">#3b4153</color>
+    <color name="accent_orange">#e89342</color>
+    <color name="dark_gray">#3b4253</color>
+
+    <color name="white_smoke">#f8f8f8</color>
+    <color name="dim_gray">#6e6b7b</color>
+    <color name="lavender">#ebe9f1</color>
+
+    <attr name="mainColor" format="color"/>
+    <attr name="darkBackground" format="color"/>
+    <attr name="secondaryBackground" format="color"/>
+    <attr name="alternateBackground" format="color"/>
+    <attr name="mainText" format="color"/>
+    <attr name="secondaryColor" format="color"/>
 </resources>

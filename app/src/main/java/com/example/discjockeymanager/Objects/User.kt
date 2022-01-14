@@ -1,4 +1,4 @@
-package com.example.discjockeymanager
+package com.example.discjockeymanager.Objects
 
 data class User(val id: Int,
                 val fullName: String,

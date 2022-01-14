@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.discjockeymanager.Objects.Client
 import com.example.discjockeymanager.databinding.FragmentClientsPopupBinding
 
 // TODO: Rename parameter arguments, choose names that match

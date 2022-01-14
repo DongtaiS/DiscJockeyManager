@@ -1,6 +1,5 @@
 package com.example.discjockeymanager
 
-import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.discjockeymanager.Objects.Event
 import com.example.discjockeymanager.databinding.FragmentEventsPopupBinding
 
 // TODO: Rename parameter arguments, choose names that match
