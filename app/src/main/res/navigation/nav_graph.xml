@@ -8,29 +8,7 @@
         android:id="@+id/homepageFragment"
         android:name="com.example.discjockeymanager.HomepageFragment"
         android:label="fragment_homepage"
-        tools:layout="@layout/fragment_homepage" >
-        <action
-            android:id="@+id/action_homepageFragment_to_clientFragment"
-            app:destination="@id/clientFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_eventsFragment"
-            app:destination="@id/eventsFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_servicesFragment"
-            app:destination="@id/servicesFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_resourcesFragment"
-            app:destination="@id/resourcesFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_systemsFragment"
-            app:destination="@id/systemsFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_venueFragment"
-            app:destination="@id/venuesFragment" />
-        <action
-            android:id="@+id/action_homepageFragment_to_songsFragment"
-            app:destination="@id/songsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_homepage" />
     <fragment
         android:id="@+id/clientFragment"
         android:name="com.example.discjockeymanager.ClientFragment"
@@ -138,5 +116,9 @@
         android:id="@+id/calendarFragment"
         android:name="com.example.discjockeymanager.CalendarFragment"
         android:label="fragment_calendar"
-        tools:layout="@layout/fragment_calendar" />
+        tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_calendarFragment_to_eventPopupFragment"
+            app:destination="@id/eventPopupFragment" />
+    </fragment>
 </navigation>

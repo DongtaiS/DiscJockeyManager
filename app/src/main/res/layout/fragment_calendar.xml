@@ -21,12 +21,13 @@
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/rounded_background_large"
         app:abbreviationsBarColor="?attr/alternateBackground"
         app:abbreviationsLabelsColor="?attr/mainText"
         app:anotherMonthsDaysLabelsColor="?attr/alternateBackground"
         app:daysLabelsColor="?attr/mainText"
+        app:eventsEnabled="true"
         app:headerColor="?attr/darkBackground"
         app:headerLabelColor="?attr/mainText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,5 +36,22 @@
         app:pagesColor="?attr/secondaryBackground"
         app:selectionColor="?attr/alternateBackground"
         app:selectionLabelColor="?attr/secondaryColor"
-        app:todayLabelColor="?attr/mainColor" />
+        app:todayLabelColor="?attr/mainColor"
+        app:type="one_day_picker" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar">
+
+        <LinearLayout
+            android:id="@+id/scrollContainerCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
