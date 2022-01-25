@@ -6,12 +6,12 @@
     app:startDestination="@id/homepageFragment">
     <fragment
         android:id="@+id/homepageFragment"
-        android:name="com.example.discjockeymanager.HomepageFragment"
+        android:name="com.example.discjockeymanager.mainpages.HomeDashboardFragment"
         android:label="fragment_homepage"
         tools:layout="@layout/fragment_homepage" />
     <fragment
         android:id="@+id/clientFragment"
-        android:name="com.example.discjockeymanager.ClientFragment"
+        android:name="com.example.discjockeymanager.mainpages.ClientFragment"
         android:label="fragment_client"
         tools:layout="@layout/fragment_clients" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/eventsFragment"
-        android:name="com.example.discjockeymanager.EventsFragment"
+        android:name="com.example.discjockeymanager.mainpages.EventsFragment"
         android:label="fragment_events"
         tools:layout="@layout/fragment_events" >
         <action
@@ -29,17 +29,17 @@
     </fragment>
     <dialog
         android:id="@+id/eventPopupFragment"
-        android:name="com.example.discjockeymanager.EventPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.EventsPopupFragment"
         android:label="fragment_event_popup"
         tools:layout="@layout/fragment_events_popup" />
     <dialog
         android:id="@+id/clientPopupFragment"
-        android:name="com.example.discjockeymanager.ClientPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.ClientPopupFragment"
         android:label="fragment_client_popup"
         tools:layout="@layout/fragment_clients_popup" />
     <fragment
         android:id="@+id/servicesFragment"
-        android:name="com.example.discjockeymanager.ServicesFragment"
+        android:name="com.example.discjockeymanager.mainpages.ServicesFragment"
         android:label="fragment_services"
         tools:layout="@layout/fragment_services" >
         <action
@@ -48,12 +48,12 @@
     </fragment>
     <dialog
         android:id="@+id/servicesPopupFragment"
-        android:name="com.example.discjockeymanager.ServicesPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.ServicesPopupFragment"
         android:label="fragment_services_popup"
         tools:layout="@layout/fragment_services_popup" />
     <fragment
         android:id="@+id/resourcesFragment"
-        android:name="com.example.discjockeymanager.ResourcesFragment"
+        android:name="com.example.discjockeymanager.mainpages.ResourcesFragment"
         android:label="fragment_resources"
         tools:layout="@layout/fragment_resources" >
         <action
@@ -62,12 +62,12 @@
     </fragment>
     <dialog
         android:id="@+id/resourcesPopupFragment"
-        android:name="com.example.discjockeymanager.ResourcesPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.ResourcesPopupFragment"
         android:label="fragment_resources_popup"
         tools:layout="@layout/fragment_resources_popup" />
     <fragment
         android:id="@+id/systemsFragment"
-        android:name="com.example.discjockeymanager.SystemsFragment"
+        android:name="com.example.discjockeymanager.mainpages.SystemsFragment"
         android:label="fragment_systems"
         tools:layout="@layout/fragment_systems" >
         <action
@@ -76,12 +76,12 @@
     </fragment>
     <dialog
         android:id="@+id/systemsPopupFragment"
-        android:name="com.example.discjockeymanager.SystemsPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.SystemsPopupFragment"
         android:label="fragment_systems_popup"
         tools:layout="@layout/fragment_systems_popup" />
     <fragment
         android:id="@+id/venuesFragment"
-        android:name="com.example.discjockeymanager.VenueFragment"
+        android:name="com.example.discjockeymanager.mainpages.VenueFragment"
         android:label="fragment_venues"
         tools:layout="@layout/fragment_venues" >
         <action
@@ -90,12 +90,12 @@
     </fragment>
     <dialog
         android:id="@+id/venuesPopupFragment"
-        android:name="com.example.discjockeymanager.VenuesPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.VenuesPopupFragment"
         android:label="fragment_venues_popup"
         tools:layout="@layout/fragment_venues_popup" />
     <fragment
         android:id="@+id/staffFragment"
-        android:name="com.example.discjockeymanager.StaffFragment"
+        android:name="com.example.discjockeymanager.mainpages.StaffFragment"
         android:label="fragment_staff"
         tools:layout="@layout/fragment_staff" >
         <action
@@ -104,17 +104,17 @@
     </fragment>
     <dialog
         android:id="@+id/staffPopupFragment"
-        android:name="com.example.discjockeymanager.StaffPopupFragment"
+        android:name="com.example.discjockeymanager.mainpages.StaffPopupFragment"
         android:label="fragment_staff_popup"
         tools:layout="@layout/fragment_staff_popup" />
     <fragment
         android:id="@+id/songsFragment"
-        android:name="com.example.discjockeymanager.SongsFragment"
+        android:name="com.example.discjockeymanager.mainpages.SongsFragment"
         android:label="fragment_songs"
         tools:layout="@layout/fragment_songs" />
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.example.discjockeymanager.CalendarFragment"
+        android:name="com.example.discjockeymanager.mainpages.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" >
         <action

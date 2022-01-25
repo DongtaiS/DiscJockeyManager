@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiscJockeyManager" >
         <activity
-            android:name=".HomepageActivity"
+            android:name=".mainpages.HomepageActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterNewUserActivity"
+            android:name=".signin.RegisterNewUserActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".signin.ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".signin.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

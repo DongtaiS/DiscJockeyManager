@@ -5,6 +5,10 @@ import android.graphics.drawable.ColorDrawable
 import android.util.TypedValue
 import androidx.annotation.ColorInt
 
+/**
+ * Helper class to access theme colors programmatically
+ */
+
 class Colors {
     companion object {
         @ColorInt
