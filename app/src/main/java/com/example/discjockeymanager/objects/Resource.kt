@@ -6,8 +6,9 @@ import androidx.annotation.RequiresApi
 import org.json.JSONObject
 import java.io.Serializable
 import java.time.LocalDate
+
 /**
- * Data class representing equipment resources, including function to parse from JSONObject
+ * Data class representing equipment resource, including function to parse from JSONObject
  */
 
 data class Resource(

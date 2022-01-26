@@ -11,6 +11,7 @@ import com.example.discjockeymanager.*
 import com.example.discjockeymanager.mainpages.HomepageActivity
 import com.example.discjockeymanager.databinding.ActivityMainBinding
 import org.json.JSONObject
+
 /**
  * Sign-in page for users, default page after splash screen
  */

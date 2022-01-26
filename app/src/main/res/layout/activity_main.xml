@@ -91,10 +91,11 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_gradient"
+            android:elevation="10dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="Sign In"
-            android:textColor="?attr/mainText"
+            android:textColor="@android:color/white"
             android:textSize="24sp"
             app:backgroundTint="@null" />
 
@@ -123,6 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="?attr/darkBackground"
+            android:elevation="10dp"
             android:text="Register"
             android:textColor="?attr/mainText"
             android:textSize="24sp" />

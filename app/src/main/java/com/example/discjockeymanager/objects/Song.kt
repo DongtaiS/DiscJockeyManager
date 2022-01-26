@@ -3,6 +3,7 @@ package com.example.discjockeymanager.objects
 
 import org.json.JSONObject
 import java.io.Serializable
+
 /**
  * Data class representing song, including function to parse from JSONObject
  */

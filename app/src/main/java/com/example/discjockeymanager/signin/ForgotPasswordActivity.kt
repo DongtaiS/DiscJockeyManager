@@ -7,12 +7,14 @@ import com.example.discjockeymanager.APIRequestHelper
 import com.example.discjockeymanager.RequestType
 import com.example.discjockeymanager.databinding.ActivityForgotPasswordBinding
 import org.json.JSONObject
+
 /**
  *  Activity to help user reset their password
  */
 
 class ForgotPasswordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityForgotPasswordBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
@@ -37,6 +39,5 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding.imgBtnPassResetBack.setOnClickListener {
             finish()
         }
-
     }
 }

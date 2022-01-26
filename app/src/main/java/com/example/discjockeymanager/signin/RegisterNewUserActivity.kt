@@ -13,9 +13,9 @@ import com.example.discjockeymanager.APIRequestHelper
 import com.example.discjockeymanager.RequestType
 import com.example.discjockeymanager.databinding.ActivityRegisterNewUserBinding
 import org.json.JSONObject
+
 /**
- * Page to register new users with email, username,
- * and password
+ * Page to register new users with email, username, and password
  */
 
 class RegisterNewUserActivity : AppCompatActivity() {

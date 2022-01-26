@@ -44,7 +44,7 @@ class ServicesPopupFragment : DialogFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             ServicesPopupFragment().apply {
                 arguments = Bundle().apply {
                 }

@@ -1,7 +1,7 @@
 package com.example.discjockeymanager
 
-
 import com.github.mikephil.charting.formatter.ValueFormatter
+
 /**
  * Used in homepage dashboard charts to format floats into ints
  */

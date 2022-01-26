@@ -15,9 +15,6 @@ import com.example.discjockeymanager.databinding.FragmentVenuesPopupBinding
  */
 
 class VenuesPopupFragment : DialogFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var binding: FragmentVenuesPopupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +42,7 @@ class VenuesPopupFragment : DialogFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             VenuesPopupFragment().apply {
                 arguments = Bundle().apply {
                 }

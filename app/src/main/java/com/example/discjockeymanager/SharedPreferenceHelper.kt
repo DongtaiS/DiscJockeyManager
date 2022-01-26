@@ -2,13 +2,14 @@ package com.example.discjockeymanager
 
 import android.content.Context
 import android.content.SharedPreferences
+
 /**
  * Helper to store simple login data using SharedPreferences system
  */
 
-
 class SharedPreferenceHelper {
     companion object {
+        //Constant key names
         private const val SHARED_PREF = "Login"
         private const val PREF_USER = "Login_User"
         private const val PREF_ACCESS_TOKEN = "Login_Access_Token"

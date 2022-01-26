@@ -3,9 +3,9 @@ package com.example.discjockeymanager.signin
 
 import com.example.discjockeymanager.objects.User
 import org.json.JSONObject
+
 /**
- * Helper class to parse User object from JSONObject and
- * manage current user
+ * Helper class to parse User object from JSONObject and manager current user
  */
 
 class LoggedInUser {

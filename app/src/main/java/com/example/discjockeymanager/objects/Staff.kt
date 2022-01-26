@@ -3,6 +3,7 @@ package com.example.discjockeymanager.objects
 
 import org.json.JSONObject
 import java.io.Serializable
+
 /**
  * Data class representing a staff employee, including function to parse from JSONObject
  */
